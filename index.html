@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*Estilo de la tabla*/
+        table, th, td {
+            border:1px solid black;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        /*Estilo del botón para reiniciar el juego*/
+        a{
+            background-color: #21211d;
+            color: #FFF;
+            padding: 10px;
+            border-radius: 20px;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <script>
+
+        //Creamos un Array para alvergar los números y una función para desordenarlos
+        function shuffleArray(inputArray){
+            inputArray.sort(()=> Math.random() - 0.5);
+        }
+        
+        var num = ['1', '2', '3', '4'];
+        shuffleArray(num);
+        
+        //Cada variable se relaciona con un índice del array
+        let primero = num[0];
+        let segundo = num[1];
+        let tercero = num[2];
+        let cuarto = num[3];
+         
+        //Creamos la tabla con las variables y un evento onclick()
+        document.write('<table style="width:100%">');
+        document.write('<tr> <td> <div id="1" onclick="evaluar1()">'+primero+'</div></td>');
+        document.write('<td><div id="2" onclick="evaluar2()">'+segundo+'</div></td></tr>');
+        document.write('<tr> <td><div id="3" onclick="evaluar3()">'+tercero+'</div></td>');
+        document.write('<td><div id="4" onclick="evaluar4()">'+cuarto+'</div></td></tr>');
+        document.write('</table>');
+        
+        //Contador
+        var i =1;
+
+        //Si el valor de la variable pulsada es el mismo que el del contador dará la elección por buena y sumará uno al contador
+        function evaluar1(){
+            if (i==primero) {
+                alert('Bien');
+                i++;
+                if (i==5) {
+                    alert('Terminaste. Completaste el uego correctamente');
+                }
+            }else{
+                alert('Mal');
+            }
+        }
+
+        function evaluar2(){
+            if (i==segundo) {
+                alert('Bien');
+                i++;
+                if (i==5) {
+                    alert('Terminaste. Completaste el uego correctamente');
+                }
+            }else{
+                alert('Mal');
+            }
+        }
+
+        function evaluar3(){
+            if (i==tercero) {
+                alert('Bien');
+                i++;
+                if (i==5) {
+                    alert('Terminaste. Completaste el uego correctamente');
+                }
+            }else{
+                alert('Mal');
+            }
+        }
+
+        function evaluar4(){
+            if (i==cuarto) {
+                alert('Bien');
+                i++;
+                if (i==5) {
+                    alert('Terminaste. Completaste el uego correctamente');
+                }
+            }else{
+                alert('Mal');
+            }
+        }
+        
+    </script>
+    <!--Botón para reiniciar el juego-->
+    <a href="javascript:;history.go(0)">Jugar otra vez</a>
+
+</body>
+</html>
